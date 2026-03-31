@@ -6,6 +6,7 @@ from PyPDF2 import PdfReader
 app = Flask(__name__)
 
 UPLOAD_FOLDER = "resumes"
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)   # 🔥 ADD THIS LINE
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 
 @app.route("/", methods=["GET", "POST"])
